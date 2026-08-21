@@ -33,6 +33,7 @@ stages:
             - arch: ppc64le
               docker: scripts/Docker/debian/13
               target: externals-linux-clang-cross
+              additionalArgs: --verifyGlibcMax=2.38
             - ${{ each arch in split('arm,arm64,x86,x64,riscv64', ',') }}:
               - arch: ${{ arch }}
                 docker: scripts/Docker/debian/10
